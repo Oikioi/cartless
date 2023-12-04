@@ -1,0 +1,76 @@
+/* signup.css */
+
+/* Style for the form */
+/* *{
+    background-color: rgb(16, 49, 33)
+} */
+
+*{
+    background-image: url("https://cdn.pixabay.com/photo/2017/01/31/18/33/fruits-2026279_1280.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-color: rgba(255, 255, 255, 0.9);
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    
+}
+
+.formContainer {
+    width: 80%;
+    max-width: 600px;
+    margin-top: 20px; /* Adjust as needed */
+    
+  }
+  
+.siteName {
+    font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif; font-size: 24px; 
+    font-size: 60px;
+    font-weight: 700;
+    font-style: normal;
+    font-variant: normal;
+    line-height: 26.4px;
+    letter-spacing: 0.25cap;
+    color:rgb(192, 120, 136)
+}
+
+.signUpForm {
+    /* Add your styles for the form here */
+    /* Example styles: */
+    
+    width: 80%;
+    margin: auto;
+    padding: 20px;
+    border: 2px solid #5c9456;
+    border-radius: 5px;
+    
+  }
+  
+  /* Style for the button */
+  .registButton {
+    /* Add your styles for the button here */
+    /* Example styles: */
+    background-color:#5c945617;
+    border-color: black;
+    border-width: 0.2cap;
+    color: rgb(16, 31, 24);
+    padding: 1px 20px;
+    border-radius: 3px;
+    cursor: pointer;
+    font-weight: 500;
+  }
+  
+  .login {
+    cursor: pointer;
+    border-color: black;
+    border-width: 0.2cap;
+    color: rgb(16, 31, 24);
+    font-family: Futura, "Trebuchet MS", Arial, sans-serif; font-size: 14px;
+  }
+  /* Additional styles for specific form items or elements can be added similarly */
+  
