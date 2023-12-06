@@ -1,13 +1,10 @@
 import React from "react";
-import {BrowserRouter as Router, Routes,Route} from "react-router-dom";
-import SignupForm from "./pages/Signup";
+import { RouterProvider } from "react-router-dom";
+import { router } from "./routes";
 
 const App = () => {
   return (
-    <Router>
-      <SignupForm></SignupForm>
-      
-    </Router>
+    <RouterProvider router={router} />
   )
 }
 export default App;

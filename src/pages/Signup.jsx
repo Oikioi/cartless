@@ -1,23 +1,21 @@
-import { Link, useNavigate } from 'react-router-dom'
-import axios from 'axios'
+import { Link } from 'react-router-dom'
 import React, { useState } from 'react';
 import {
   AutoComplete,
   Button,
-  Cascader,
-  Checkbox,
-  Col,
   Form,
   Input,
-  InputNumber,
-  Row,
   Select,
 } from 'antd';
 import './signup.css'
 
 const { Option } = Select;
-const navigate = useNavigate();
-
+// const onFinish = (values) => {
+//   console.log('Success:', values);
+// };
+// const onFinishFailed = (errorInfo) => {
+//   console.log('Failed:', errorInfo);
+// };
 
 const formItemLayout = {
   labelCol: {
@@ -50,13 +48,22 @@ const tailFormItemLayout = {
     },
   },
 };
-
-const SignupForm = () => {
+export const SignupForm = () => {
   const [form] = Form.useForm();
 
+  // const onFinish = (values) => {
+  //   console.log('Received values of form: ', values);
+
   const onFinish = (values) => {
-    console.log('Received values of form: ', values);
+    console.log('Success:', values);
   };
+  const onFinishFailed = (errorInfo) => {
+    console.log('Failed:', errorInfo);
+  };
+  onFinish={onFinish}
+  onFinishFailed={onFinishFailed}
+  AutoComplete="off";
+  
 
   const prefixSelector = (
     <Form.Item name="prefix" noStyle>
@@ -67,15 +74,6 @@ const SignupForm = () => {
     </Form.Item>
   );
 
-  const signUpForm = async(e) => {
-    e.preventDefault()
-    try{
-      const res = await axios.post('/auth/register')
-      navigate('/Login');
-    } catch(err){
-      console.log(err)
-    }
-  }
  
 
   const [autoCompleteResult, setAutoCompleteResult] = useState([]);
@@ -138,7 +136,11 @@ const SignupForm = () => {
         rules={[
           {
             required: true,
-            message: 'At least 8-length',
+            pattern:{
+              value: /^(?=.*[a-z])(?=.*[0-9]).{6,}$/i,
+            
+            message: 'At least 6 characters   One Uppercase letter'
+            }
           },
         ]}
         hasFeedback
@@ -214,7 +216,7 @@ const SignupForm = () => {
         </Button>
 
         <h4>already have account! just__ 
-          <button className='login'>Login</button>
+          <button className='login'>Login<Link to={"/login"}></Link></button>
           </h4>
           
       </Form.Item>
